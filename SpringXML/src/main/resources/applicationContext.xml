@@ -1,14 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
                            http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- Define the Engine bean -->
-    <bean id="engine" class="com.example.SpringXML.Engine"/>
+    <bean id="engine" class="com.example.SpringXML.Engine">
+        <property name="type"  value="v*"/>
+    </bean>
 
-    <!-- Define the Car bean with constructor injection -->
+    <!-- Define the Car bean and inject the Engine bean using setter injection -->
     <bean id="car" class="com.example.SpringXML.Car">
+<!--        <property name="engine" ref="engine"/>-->
         <constructor-arg ref="engine"/>
     </bean>
+
 </beans>
