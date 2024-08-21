@@ -1,5 +1,8 @@
 package com.example.SpringXML;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Engine {
     private String type;
 
